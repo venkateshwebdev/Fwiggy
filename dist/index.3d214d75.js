@@ -39014,13 +39014,13 @@ var _restCard = require("./RestCard");
 var _restCardDefault = parcelHelpers.interopDefault(_restCard);
 var _shimmer = require("./Shimmer");
 var _shimmerDefault = parcelHelpers.interopDefault(_shimmer);
-var _utils = require("./utils");
+// import { MENU_URL } from "./utils";
 var _search = require("./Search");
 var _searchDefault = parcelHelpers.interopDefault(_search);
 var _s = $RefreshSig$();
 const RestaurantDetails = ()=>{
     _s();
-    const { id  } = (0, _reactRouter.useParams)();
+    const id = (0, _reactRouterDom.useParams)().id;
     const [resd, setResd] = (0, _react.useState)([]);
     const [rest, setRest] = (0, _react.useState)(true);
     const [r, setR] = (0, _react.useState)([]);
@@ -39037,6 +39037,7 @@ const RestaurantDetails = ()=>{
     const getRestuarantDetails = async ()=>{
         const rawdata = await fetch(`https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.0759837&lng=72.8776559&restaurantId=${id}&submitAction=ENTER`);
         const data = await rawdata.json();
+        console.log(data);
         setR(data?.data?.cards[0]?.card?.card?.info);
         console.log(data?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1].card?.card?.itemCards);
         setResd(data?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1].card?.card?.itemCards);
@@ -39057,12 +39058,12 @@ const RestaurantDetails = ()=>{
                     children: "← back to restauntants"
                 }, void 0, false, {
                     fileName: "RestaurantDetails.js",
-                    lineNumber: 40,
+                    lineNumber: 41,
                     columnNumber: 41
                 }, undefined)
             }, void 0, false, {
                 fileName: "RestaurantDetails.js",
-                lineNumber: 40,
+                lineNumber: 41,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -39074,12 +39075,12 @@ const RestaurantDetails = ()=>{
                             src: `https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/${r?.cloudinaryImageId}`
                         }, void 0, false, {
                             fileName: "RestaurantDetails.js",
-                            lineNumber: 44,
+                            lineNumber: 45,
                             columnNumber: 17
                         }, undefined)
                     }, void 0, false, {
                         fileName: "RestaurantDetails.js",
-                        lineNumber: 43,
+                        lineNumber: 44,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -39089,33 +39090,33 @@ const RestaurantDetails = ()=>{
                                 children: r.name
                             }, void 0, false, {
                                 fileName: "RestaurantDetails.js",
-                                lineNumber: 47,
+                                lineNumber: 48,
                                 columnNumber: 17
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                                 children: r.areaName
                             }, void 0, false, {
                                 fileName: "RestaurantDetails.js",
-                                lineNumber: 48,
+                                lineNumber: 49,
                                 columnNumber: 17
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                                 children: r.city
                             }, void 0, false, {
                                 fileName: "RestaurantDetails.js",
-                                lineNumber: 49,
+                                lineNumber: 50,
                                 columnNumber: 17
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "RestaurantDetails.js",
-                        lineNumber: 46,
+                        lineNumber: 47,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "RestaurantDetails.js",
-                lineNumber: 42,
+                lineNumber: 43,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _searchDefault.default), {
@@ -39125,12 +39126,12 @@ const RestaurantDetails = ()=>{
                 onEmpty: onEmpty
             }, void 0, false, {
                 fileName: "RestaurantDetails.js",
-                lineNumber: 52,
+                lineNumber: 53,
                 columnNumber: 17
             }, undefined),
             filtered?.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
                 fileName: "RestaurantDetails.js",
-                lineNumber: 53,
+                lineNumber: 54,
                 columnNumber: 35
             }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "card-cc",
@@ -39139,38 +39140,38 @@ const RestaurantDetails = ()=>{
                         children: "Sorry! We are Currently Not Available..."
                     }, void 0, false, {
                         fileName: "RestaurantDetails.js",
-                        lineNumber: 55,
+                        lineNumber: 56,
                         columnNumber: 40
                     }, undefined),
                     filtered?.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                         children: "OOps we dot have that currently..."
                     }, void 0, false, {
                         fileName: "RestaurantDetails.js",
-                        lineNumber: 56,
+                        lineNumber: 57,
                         columnNumber: 39
                     }, undefined) : filtered?.map((e)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restCardDefault.default), {
                             data: e.card?.info
                         }, e.card?.info?.id, false, {
                             fileName: "RestaurantDetails.js",
-                            lineNumber: 56,
+                            lineNumber: 57,
                             columnNumber: 102
                         }, undefined))
                 ]
             }, void 0, true, {
                 fileName: "RestaurantDetails.js",
-                lineNumber: 54,
+                lineNumber: 55,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "RestaurantDetails.js",
-        lineNumber: 37,
+        lineNumber: 38,
         columnNumber: 9
     }, undefined);
 };
-_s(RestaurantDetails, "CCwNQ9wCyV/RmTenp//dCqOfbis=", false, function() {
+_s(RestaurantDetails, "1InyeZGkw8EBdz//0a7WksI1otM=", false, function() {
     return [
-        (0, _reactRouter.useParams)
+        (0, _reactRouterDom.useParams)
     ];
 });
 _c = RestaurantDetails;
@@ -39183,7 +39184,7 @@ $RefreshReg$(_c, "RestaurantDetails");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router":"dbWyW","react-router-dom":"9xmpe","./RestCard":"hjEm2","./Shimmer":"19DXd","./utils":"bIDtH","./Search":"b97Na","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dbWyW":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router":"dbWyW","react-router-dom":"9xmpe","./RestCard":"hjEm2","./Shimmer":"19DXd","./Search":"b97Na","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dbWyW":[function(require,module,exports) {
 /**
  * React Router v6.14.0
  *
@@ -40366,7 +40367,7 @@ function createMemoryRouter(routes, opts) {
     }).initialize();
 }
 
-},{"@remix-run/router":"cEcng","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cEcng":[function(require,module,exports) {
+},{"react":"21dqq","@remix-run/router":"cEcng","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cEcng":[function(require,module,exports) {
 /**
  * @remix-run/router v1.7.0
  *

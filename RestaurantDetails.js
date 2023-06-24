@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
-import { Link } from "react-router-dom";
+import { useLocation } from "react-router";
+import { Link, useParams } from "react-router-dom";
 import RestCard from "./RestCard";
 import Shimmer from "./Shimmer";
-import { MENU_URL } from "./utils";
+// import { MENU_URL } from "./utils";
 import Search from "./Search";
 const RestaurantDetails = () => {
-    const {id} = useParams()
+    const id = useParams().id
     const [resd,setResd] = useState([]);
     const [rest,setRest] = useState(true);
     const [r,setR] = useState([]);
@@ -23,6 +23,7 @@ const RestaurantDetails = () => {
     const getRestuarantDetails = async()=>{
         const rawdata = await fetch(`https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.0759837&lng=72.8776559&restaurantId=${id}&submitAction=ENTER`);
         const data = await rawdata.json()
+        console.log(data)
         setR(data?.data?.cards[0]?.card?.card?.info)
         console.log(data?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1].card?.card?.itemCards)
         setResd(data?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1].card?.card?.itemCards)
