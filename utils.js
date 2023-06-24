@@ -1,0 +1,2 @@
+export const RES_URL = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.0759837&lng=72.8776559&sortBy=RELEVANCE&filters=%7B%22CUISINES%22%3A%5B%22Biryani%22%5D%7D&page_type=DESKTOP_WEB_LISTING"
+// export const MENU_URL = `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.0759837&lng=72.8776559&restaurantId=${id}&submitAction=ENTER`
