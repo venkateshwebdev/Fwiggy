@@ -22,5 +22,5 @@
   "devDependencies": {
     "process": "^0.11.10"
   },
-  "proxy": "http://www.swiggy.com/"
+  "proxy": "https://www.swiggy.com"
 }
